@@ -84,7 +84,7 @@ rootPanel.add(titleTF, gridBagConstraints);
 //gridBagConstraints.insets = new Insets(5, 3, 0, 3);
 //rootPanel.add(energyTF, gridBagConstraints);
 
-l = new JLabel("Cost(¢/kWh):");
+l = new JLabel("Cost(¢/GJ):");
 l.setHorizontalAlignment(SwingConstants.LEFT);
 l.setMinimumSize(new Dimension(100, 20));
 l.setPreferredSize(new Dimension(100, 20));
@@ -130,6 +130,8 @@ gridBagConstraints.insets = new Insets(5, 3, 0, 3);
 rootPanel.add(deadlineTF, gridBagConstraints);
 
 setDeadlineB = new JButton("Set");
+setDeadlineB.setBackground(Color.GREEN);
+setDeadlineB.setOpaque(true);
 setDeadlineB.setMinimumSize(new Dimension(70, 20));
 setDeadlineB.setPreferredSize(new Dimension(70, 20));
 setDeadlineB.addActionListener(new ActionListener(){
@@ -175,6 +177,16 @@ rootPanel.add(setDeadlineB, gridBagConstraints);
 //rootPanel.add(setCCB, gridBagConstraints);
 
 rootPanel.setBorder(new BevelBorder(BevelBorder.LOWERED));
+rootPanel.setBackground(Color.CYAN);
+l = new JLabel("WELCOME TO TENDER SELECTION:");
+l.setFont(new Font("Calibri", Font.ITALIC, 20));
+l.setForeground(Color.BLUE);
+l.setHorizontalAlignment(SwingConstants.CENTER);
+gridBagConstraints = new GridBagConstraints();
+gridBagConstraints.gridx = 1;
+gridBagConstraints.gridy = 0;
+gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+rootPanel.add(l,gridBagConstraints);
 
 getContentPane().add(rootPanel, BorderLayout.NORTH);
 
@@ -190,6 +202,8 @@ getContentPane().add(p, BorderLayout.CENTER);
 
 p = new JPanel();
 buyB = new JButton("Buy");
+buyB.setBackground(Color.YELLOW);
+buyB.setOpaque(true);
 buyB.addActionListener(new ActionListener(){
 public void actionPerformed(ActionEvent e) {
 String title = titleTF.getText();
@@ -235,6 +249,8 @@ else {
 }
 } );
 resetB = new JButton("Reset");
+resetB.setBackground(Color.BLUE);
+resetB.setOpaque(true);
 resetB.addActionListener(new ActionListener(){
 public void actionPerformed(ActionEvent e) {
 titleTF.setText("");
@@ -245,6 +261,8 @@ deadline = null;
 }
 } );
 exitB = new JButton("Exit");
+exitB.setBackground(Color.RED);
+exitB.setOpaque(true);
 exitB.addActionListener(new ActionListener(){
 public void actionPerformed(ActionEvent e) {
 myAgent.doDelete();
